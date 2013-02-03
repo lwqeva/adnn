@@ -1,17 +1,19 @@
 clear;
 
 nx = 1;     % number of nodes in input layer
-N = 50;    % num of samples
-M = 2;      % number of nodes in hidden layer
+N = 50;     % num of samples
+M = 3;      % number of nodes in hidden layer
 
 X = (rand(nx,N)-0.5)*2*pi;   % sample input
-Y = sin(X);     % sample output
+Y = sin(X)+cos(2*X);     % sample output
 
 % train nnet
-[w, Extra] = nn_train_LSq(X,Y,M);
+[nn, r] = nn_train(M,X,Y);
 
-% compute residual
-r = nn_residual(w,Extra);
+nn.X = X;
+nn.Y = Y;
+
+r = get_residual(nn.w,nn);
 
 subplot(3,1,1)
 scatter(X,Y), axis([-4, 4, -2, 2]);
