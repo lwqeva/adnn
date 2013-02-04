@@ -11,7 +11,9 @@ function [nn, res] = nn_train(dim,X,Y)
 % res       - residual of current nnet on the training data
 
 
-[w, res] = solve_LSq(dim,X,Y);
+% [w, res] = solve_LSq(dim,X,Y);
+
+[w, res] = solve_bpgd(dim,X,Y);
 
 nn.dim = dim;
 nn.w = w;

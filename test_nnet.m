@@ -2,7 +2,7 @@ clear;
 
 nx = 1;     % number of nodes in input layer
 N = 50;     % num of samples
-M = 3;      % number of nodes in hidden layer
+M = 5;      % number of nodes in hidden layer
 
 X = (rand(nx,N)-0.5)*2*pi;   % sample input
 Y = sin(X)+cos(2*X);     % sample output

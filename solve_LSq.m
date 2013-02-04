@@ -1,4 +1,4 @@
-% form the training as LSq problem and solve it.
+% formulate the training as LSq problem and solve it.
 function [w, res] = solve_LSq(dim,X,Y)
 
 % training data and model info are passed via global variable Extra
